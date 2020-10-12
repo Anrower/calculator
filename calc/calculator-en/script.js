@@ -23,7 +23,7 @@ class Calculator {
     }
 
     chooseOperation(operation) {
-        if (operation === "-") {
+        if (operation === "-" && this.currentOperand === '') {
             this.currentOperand = "-";
             return;
         }
@@ -118,6 +118,7 @@ class Calculator {
             this.currentOperand
         );
         console.log(this.currentOperand);
+        console.log(this.previousOperand);
 
         if (this.operation != null) {
             this.previousOperandTextElement.innerText = `${this.getDisplayNumber(
